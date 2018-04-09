@@ -1,0 +1,7 @@
+https://scqq.blogspot.co.id/2017/12/laravel-55-tutorial-create-admin-panel.html
+http://www.kodehero.com/2017/12/tutorial-crud-pada-laravel-55-lengkap.html
+https://github.com/layumi3/adminrental
+https://appdividend.com/2017/11/28/integrate-admin-template-laravel-5-5/
+https://appdividend.com/2017/10/15/laravel-5-5-crud-example-tutorial/
+https://appdividend.com/2017/08/20/laravel-5-5-tutorial-example/
+https://www.5balloons.info/laravel-authentication-tutorial-login-logout-register-forgot-password-remember-me-functionality/
