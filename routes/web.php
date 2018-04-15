@@ -20,3 +20,8 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
+
+/*
+|Administrator
+*/
+$this->get('perental', 'MemberController@index')->name('perental');
