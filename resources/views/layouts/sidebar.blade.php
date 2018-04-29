@@ -20,19 +20,24 @@
           </ul>
         </li>
        <li class="treeview">
-          <a href="#">
+          <a href="{{ route('produk') }}">
             <i class="fa fa-product-hunt"></i> <span>Produk</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="../../index.html"><i class="fa fa-bicycle"></i> Sepeda</a></li>
+            <li><a href="{{ route('produk') }}"><i class="fa fa-bicycle"></i> Sepeda</a></li>
             <li><a href="../../index2.html"><i class="fa fa-motorcycle"></i> Motor</a></li>
             <li><a href="../../index2.html"><i class="fa fa-car"></i> Mobil</a></li>
             <li><a href="../../index2.html"><i class="fa fa-bus"></i> Mini Bus</a></li>
           </ul>
         </li>
+       <li class="treeview">
+          <a href="{{ route('order') }}">
+            <i class="fa fa-dashboard"></i> <span>Order</span>
+          </a>
+       </li>
        <li class="treeview">
           <a href="#">
             <i class="fa fa-tag"></i> <span>Kategori</span>

@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Tables</h1>
+            <h1>Data Tables Product</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -34,27 +34,25 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Email</th>
-            <th>Website</th>
+            <th>Name</th>
+            <th>Alamat</th>
             <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
-    @foreach ($contacts as $contact)
+    @foreach ($orders as $order)
         <tr>
             <td>
-            {{ $contact->id }}
+            {{ $order->id }}
             </td>
             <td>
-            {{ $contact->email }}
+            {{ $order->name }}
             </td>
             <td>
-            {{ $contact->website }}
+            {{ $order->address }}
             </td>
             <td>
-           <a class="btn btn-info" href="#">Show</a>
-            <a class="btn btn-primary" href="#">Edit</a>
-
+            {{ $order->address }}
             </td>
         </tr>
     @endforeach

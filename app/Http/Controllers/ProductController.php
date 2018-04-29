@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contact;
+use App\Product;
 
-class MemberController extends Controller
+class ProductController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,10 +24,10 @@ class MemberController extends Controller
      */
     public function index()
     {
-    	$contacts = Contact::all();
+    	$products = Product::all();
         // echo "$contacts";
         // return view('layouts\user.index',compact('contacts',$contacts));
         
-        return view('layouts\user',compact('contacts'));
+        return view('layouts\product',compact('products'));
     }
 }

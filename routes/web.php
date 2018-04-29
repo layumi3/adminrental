@@ -20,8 +20,12 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
-
+Route::resource('contact','ContactController');
+Route::resource('product','ProductController');
+Route::resource('order','OrderController');
 /*
 |Administrator
 */
 $this->get('perental', 'MemberController@index')->name('perental');
+$this->get('produk', 'ProductController@index')->name('produk');
+$this->get('order', 'OrderController@index')->name('order');
