@@ -1,5 +1,6 @@
 <?php
-
+require_once __DIR__.'/../vendor/guzzle/autoloader.php';
+// require 'vendor/guzzle/autoloader.php';
 /*
 |--------------------------------------------------------------------------
 | Create The Application
