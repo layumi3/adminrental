@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Product extends Model
+class Order extends Model
 {
     // use Authenticatable, Authorizable;
 
@@ -13,10 +13,9 @@ class Product extends Model
      *
      * @var array
      */
-    protected $table = 'products';
+    protected $table = 'orders';
     protected $fillable = [
-        'id'.'user_id','brand', 'year', 'type', 'category', 'transmision', 'plat', 'latlong', 'address', 'hourly_price', 'daily_price', 'requirements', 'delivery_by_owner', 'delivery_by_user', 'delivery_fee', 'bank_account', 'img1', 'active',
-        'img2','img3'
+        'product_id','agent_id','user_id','status', 'order_time','order_created', 'rent_duration', 'delivery_type', 'total_price'
     ];
 
     protected $hidden = [

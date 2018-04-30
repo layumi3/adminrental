@@ -34,9 +34,16 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Alamat</th>
-            <th>Aksi</th>
+            <th>Pemilik ID</th>
+            <th>Brand</th>
+            <th>Tahun</th>
+            <th>Type</th>
+            <th>Plat</th>
+            <th>Harga Perjam</th>
+
+            <!-- jadi yang ditampilka kondisi active = 1 
+                kalo yang kondisinya active=0 nanti munculin di tempat lain untuk di validasi
+                {blum di validasi}-->
         </tr>
     </thead>
     <tbody>
@@ -46,13 +53,19 @@
             {{ $product->id }}
             </td>
             <td>
-            {{ $product->name }}
+            {{ $product->user_id }}
             </td>
             <td>
-            {{ $product->address }}
+            {{ $product->year }}
             </td>
             <td>
-            {{ $product->address }}
+            {{ $product->type }}
+            </td>
+            <td>
+            {{ $product->plat }}
+            </td>
+            <td>
+            {{ $product->hourly_price }}
             </td>
         </tr>
     @endforeach

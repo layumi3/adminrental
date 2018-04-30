@@ -34,9 +34,13 @@
     <thead>
         <tr>
             <th>ID</th>
-            <th>Name</th>
-            <th>Alamat</th>
-            <th>Aksi</th>
+            <th>Pemilik ID</th>
+            <th>Penyewa ID</th>
+            <th>Status</th>
+            <th>Waktu Sewa</th>
+            <th>Durasi Sewa</th>
+            <th>Jenis Pengiriman</th>
+            <th>Total Harga</th>
         </tr>
     </thead>
     <tbody>
@@ -46,13 +50,29 @@
             {{ $order->id }}
             </td>
             <td>
-            {{ $order->name }}
+            {{ $order->agent_id }}
             </td>
             <td>
-            {{ $order->address }}
+            {{ $order->user_id }}
             </td>
             <td>
-            {{ $order->address }}
+            {{ $order->status 
+
+            <!-- sama halnya dengan product status = 3 admin validasi pembayaran  -->
+
+            }}
+            </td>
+            <td>
+            {{ $order->order_time }}
+            </td>
+            <td>
+            {{ $order->rent_duration }}
+            </td>
+            <td>
+            {{ $order->delivery_type }}
+            </td>
+            <td>
+            {{ $order->total_price }}
             </td>
         </tr>
     @endforeach
