@@ -7,9 +7,10 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-       <li class="treeview">
+        <li><a class="fa fa-address-card-o" href="{{ route('perental') }}"></i> Member</a></li>
+      <!--  <li class="treeview">
           <a href="#">
-            <i class="fa fa-address-card-o"></i> <span>Member</span>
+            <i ></i> <span>Member</span>
             <span class="pull-right-container">
               <i class="fa fa-angle-left pull-right"></i>
             </span>
@@ -17,8 +18,8 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i> Perental</a></li>
             <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i> Agen</a></li>
-          </ul>
-        </li>
+          </ul> 
+        </li> -->
        <li class="treeview">
           <a href="{{ route('produk') }}">
             <i class="fa fa-product-hunt"></i> <span>Produk</span>
@@ -35,7 +36,7 @@
         </li>
        <li><a href="{{ route('pesanan') }}"><i class="fa fa-money"></i> Pesanan</a></li>
        </li>
-       <li><a href="{{ route('feedback') }}"><i class="fa fa-comment"></i> Feedback Perental</a></li>
+       <li><a href="{{ route('feedback') }}"><i class="fa fa-comment"></i> Feedback Member</a></li>
        <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i>Perental</a></li>
        
       </ul>

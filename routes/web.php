@@ -36,3 +36,4 @@ $this->get('pesanan', 'OrderController@index')->name('pesanan');
 $this->get('pesanan/{id}', 'OrderController@validasi')->name('pesanan.validasi');
 $this->post('edit/{id}', 'OrderController@edit')->name('pesanan.edit');
 $this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');
+$this->get('unblok/{id}', 'MemberController@blok')->name('blok.unblok');

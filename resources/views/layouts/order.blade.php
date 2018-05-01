@@ -60,7 +60,7 @@
             ?>
             </td>
             <td>
-                <?php if ($order->status==1){?>
+                <?php if ($order->status==3){?>
                 <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
                 
                 <?php }else if($order->status==2){?>

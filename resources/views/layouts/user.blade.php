@@ -41,10 +41,11 @@
             <td>
             <a class="btn btn-info" href="{{ route('perental.show',$contact->id) }}">Show</a>
                 <?php if ($contact->blocked==null){?>
-                <a class="btn btn-warning" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
+                <a class="btn btn-danger" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
                 
                 <?php }else{?>
-                <button class="btn .btn-sm btn-warning" disabled>Blocked</button> 
+                 <a class="btn btn-success" href="{{ route('blok.unblok',$contact->id) }}">Unblock</a>
+               <!--  <button class="btn .btn-sm btn-success" href="{{ route('blok.unblok',$contact->id) }}">Unblock</button>  -->
                 <?php }?>
             </td>
         </tr>

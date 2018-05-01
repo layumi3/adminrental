@@ -84,6 +84,14 @@ class MemberController extends Controller
             return redirect()->route('perental');
         
      }
+    
+    public function unblok(Request $request, $id=null)
+    {
+            $contact = User::where('id', $id)
+            ->update(['blocked' => 0]);
+            return redirect()->route('perental');
+        
+     }
     /**
      * Update the specified resource in storage.
      *

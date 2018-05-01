@@ -31,7 +31,7 @@ class OrderController extends Controller
     public function show(Request $request, $id=null)
     {
             $contact = Order::where('id', $id)
-            ->update(['status' => 3]);
+            ->update(['status' => 2]);
             return redirect()->route('pesanan');
         
      }
