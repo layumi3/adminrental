@@ -15,8 +15,8 @@ class Product extends Model
      */
     protected $table = 'products';
     protected $fillable = [
-        'id'.'user_id','brand', 'year', 'type', 'category', 'transmision', 'plat', 'latlong', 'address', 'hourly_price', 'daily_price', 'requirements', 'delivery_by_owner', 'delivery_by_user', 'delivery_fee', 'bank_account', 'img1', 'active',
-        'img2','img3'
+        'id','user_id','brand', 'year', 'type', 'category', 'transmision', 'plat', 'latlong', 'address', 'hourly_price', 'daily_price', 'requirements', 'delivery_by_owner', 'delivery_by_user', 'delivery_fee', 'bank_account','img1',
+        'img2','img3','status'
     ];
 
     protected $hidden = [

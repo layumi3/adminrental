@@ -56,6 +56,9 @@
             {{ $product->user_id }}
             </td>
             <td>
+            {{ $product->brand }}
+            </td>            
+            <td>
             {{ $product->year }}
             </td>
             <td>
