@@ -1,4 +1,5 @@
 @extends('layouts.master')
+
 @extends('layouts.sidebar')
 
 @section('content')
@@ -52,8 +53,13 @@
             {{ $contact->website }}
             </td>
             <td>
-           <a class="btn btn-info" href="#">Show</a>
+            <a class="btn btn-info" href="{{ route('perental.show',$contact->id) }}">Show</a>
+            <a class="btn btn-primary" href="{{ route('perental.edit',$contact->id) }}">Edit</a>
+           <!-- <a class="btn btn-info" href="#">Show</a>
             <a class="btn btn-primary" href="#">Edit</a>
+            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                Delete
+            </button> -->
 
             </td>
         </tr>
@@ -86,5 +92,9 @@
                 }
             });
         });
+
+
+    
+
     </script>
 @endsection

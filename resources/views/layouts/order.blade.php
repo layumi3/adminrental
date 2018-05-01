@@ -41,6 +41,7 @@
             <th>Durasi Sewa</th>
             <th>Jenis Pengiriman</th>
             <th>Total Harga</th>
+            <th>Validate</th>
         </tr>
     </thead>
     <tbody>
@@ -57,6 +58,7 @@
             </td>
             <td>
             {{ $order->status }}
+
             <!-- sama halnya dengan product status = 3 admin validasi pembayaran  -->
             </td>
             <td>
@@ -70,6 +72,15 @@
             </td>
             <td>
             {{ $order->total_price }}
+            </td>
+            <td>
+                <?php if ($order->status==1){?>
+                <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
+                
+                <?php }else{?>
+                <a href="">Success</a> 
+                <?php }?>
+
             </td>
         </tr>
     @endforeach

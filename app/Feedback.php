@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Contact extends Model
+class Feedback extends Model
 {
     // use Authenticatable, Authorizable;
 
@@ -13,12 +13,12 @@ class Contact extends Model
      *
      * @var array
      */
-    protected $table = 'contacts';
+    protected $table = 'feedback';
     
     public $timestamps = false;
 
     protected $fillable = [
-        'user_id', 'address', 'website', 'no_wa', 'phone', 'line_id', 'email', 'latlong','created_at', 'updated_at'
+        'ket','id', 
     ];
 
     protected $hidden = [

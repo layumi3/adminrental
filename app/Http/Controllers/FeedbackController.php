@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-
+use App\Feedback;
 
 class FeedbackController extends Controller
 {
@@ -24,10 +24,7 @@ class FeedbackController extends Controller
      */
     public function index()
     {
-    	// $products = Product::all();
-        echo "contacts";
-        // return view('layouts\user.index',compact('contacts',$contacts));
-        
-        // return view('layouts\product',compact('products'));
+    	$feedbacks = Feedback::all();
+        return view('layouts\feedback',compact('feedbacks'));
     }
 }
