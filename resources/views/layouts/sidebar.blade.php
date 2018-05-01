@@ -17,6 +17,7 @@
           <ul class="treeview-menu">
             <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i> Perental</a></li>
             <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i> Agen</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i>Blok Member</a></li>
           </ul>
         </li>
        <li class="treeview">
@@ -33,21 +34,31 @@
             <li><a href="../../index2.html"><i class="fa fa-bus"></i> Mini Bus</a></li>
           </ul>
         </li>
+        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-check-square"></i> <span>Verifikasi Kendaraan</span>
+          </a>
+        </li>
        <li class="treeview">
           <a href="{{ route('order') }}">
             <i class="fa fa-dashboard"></i> <span>Order</span>
           </a>
        </li>
-       <li class="treeview">
+        <li class="treeview">
           <a href="#">
-            <i class="fa fa-tag"></i> <span>Kategori</span>
+            <i class="fa fa-money"></i> <span>Konfirmasi pembayaran</span>
           </a>
         </li>
        <li class="treeview">
+          <a href="#">
+            <i class="fa fa-tag"></i> <span>Feedback</span>
+          </a>
+        </li>
+<!--        <li class="treeview">
           <a href="#">
             <i class="fa fa-laptop"></i> <span>User</span>
           </a>
-        </li>
+        </li> -->
        
       </ul>
 <!--         <ul class="sidebar-menu" data-widget="tree">
