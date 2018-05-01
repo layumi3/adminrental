@@ -8,7 +8,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Data Tables Product</h1>
+            <h1>Data Tables Order</h1>
           </div>
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
@@ -56,11 +56,8 @@
             {{ $order->user_id }}
             </td>
             <td>
-            {{ $order->status 
-
+            {{ $order->status }}
             <!-- sama halnya dengan product status = 3 admin validasi pembayaran  -->
-
-            }}
             </td>
             <td>
             {{ $order->order_time }}

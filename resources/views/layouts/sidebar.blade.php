@@ -33,36 +33,11 @@
             <li><a href="../../index2.html"><i class="fa fa-bus"></i> Mini Bus</a></li>
           </ul>
         </li>
-       <li class="treeview">
-          <a href="{{ route('order') }}">
-            <i class="fa fa-dashboard"></i> <span>Order</span>
-          </a>
+       <li><a href="{{ route('pesanan') }}"><i class="fa fa-money"></i> Pesanan</a></li>
        </li>
-       <li class="treeview">
-          <a href="#">
-            <i class="fa fa-tag"></i> <span>Kategori</span>
-          </a>
-        </li>
-       <li class="treeview">
-          <a href="#">
-            <i class="fa fa-laptop"></i> <span>User</span>
-          </a>
-        </li>
+       <li><a href="{{ route('feedback') }}"><i class="fa fa-comment"></i> Feedback Perental</a></li>
+       <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i>Perental</a></li>
        
       </ul>
-<!--         <ul class="sidebar-menu" data-widget="tree">
-            <li class="treeview">
-                <a href="#">
-                    <i class="fa fa-dashboard"></i> <span>Categories</span>
-                    <span class="pull-right-container">
-                    <i class="fa fa-angle-left pull-right"></i>
-                    </span>
-                </a>
-                <ul class="treeview-menu">
-                    <li><a href=""><i class="fa fa-circle-o"></i>Add Category</a></li>
-                    <li><a href=""><i class="fa fa-circle-o"></i>All Categories</a></li>
-                </ul>
-            </li> 
-        </ul> -->
     </section>
 </aside>

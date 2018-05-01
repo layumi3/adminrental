@@ -22,10 +22,12 @@ $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 Route::resource('contact','ContactController');
 Route::resource('product','ProductController');
-Route::resource('order','OrderController');
+Route::resource('feedback','FeedbackController');
+Route::resource('orders','OrderController');
 /*
 |Administrator
 */
 $this->get('perental', 'MemberController@index')->name('perental');
+$this->get('feedback', 'FeedbackController@index')->name('feedback');
 $this->get('produk', 'ProductController@index')->name('produk');
-$this->get('order', 'OrderController@index')->name('order');
+$this->get('pesanan', 'OrderController@index')->name('pesanan');
