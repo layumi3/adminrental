@@ -1,6 +1,11 @@
-@extends('layouts.user')
- 
+@extends('layouts.master')
+
+@extends('layouts.sidebar')
+
 @section('content')
+<div class="container">
+    <div class="row">
+        <div class="col-md-8 col-md-offset-2">
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
@@ -25,4 +30,7 @@
             </div>
         </div>
     </div>
+</div>
+</div>
+</div>
 @endsection

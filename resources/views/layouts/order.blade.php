@@ -2,25 +2,7 @@
 @extends('layouts.sidebar')
 
 @section('content')
- <div class="content-wrapper">
-    <!-- Content Header (Page header) -->
-    <section class="content-header">
-      <div class="container-fluid">
-        <div class="row mb-2">
-          <div class="col-sm-6">
-            <h1>Data Tables Order</h1>
-          </div>
-          <div class="col-sm-6">
-            <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Data Tables</li>
-            </ol>
-          </div>
-        </div>
-      </div><!-- /.container-fluid -->
-    </section>
-
-    <section class="content">
+<section class="content">
       <div class="row">
         <div class="col-12">
 
@@ -77,10 +59,11 @@
                 <?php if ($order->status==1){?>
                 <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
                 
+                <?php }else if($order->status==2){?>
+                <button class="btn btn-warning" disabled>Click Me!</button>
                 <?php }else{?>
-                <a href="">Success</a> 
+                <a href="" class="btn-success">&nbsp;Success&nbsp;</a> 
                 <?php }?>
-
             </td>
         </tr>
     @endforeach
@@ -92,8 +75,6 @@
 </div>
 </div>
 </section>
-
-</div>
 <script>
          jQuery(function($) {
         //initiate dataTables plugin
