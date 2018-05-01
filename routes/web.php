@@ -32,4 +32,4 @@ $this->get('feedback', 'FeedbackController@index')->name('feedback');
 $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('pesanan', 'OrderController@index')->name('pesanan');
 $this->get('konfirmasi_pay', 'OrderController@konfirmasi_pay')->name('konfirmasi_pay');
-$this->get('update/{id}', 'OrderController@update')->name('update');
+$this->get('pesanan/{id}', 'OrderController@validasi')->name('validasi_pembayaran');

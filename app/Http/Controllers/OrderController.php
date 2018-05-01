@@ -40,14 +40,11 @@ class OrderController extends Controller
         return view('layouts\confirmation_pay',compact('orders'));
     }
 
-    public function update(Request $request,$id) 
+    public function validasi_pembayaran(Request $request, $id=null)
     {
-
-        $this->validate($request, [
-          'status' => '2'
-        ]);
-        $orders = Order::where('id', $id)->first()->update($request->all());
-
-        return view('layouts\confirmation_pay',compact('orders'));
-  }
+            $contact = Order::where('id', $id)
+            ->update(['status' => 2]);
+            return redirect()->route('pesanan');
+        
+     }
 }

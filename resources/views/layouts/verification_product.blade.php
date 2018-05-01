@@ -71,7 +71,7 @@
             {{ $product->hourly_price }}
             </td>
             <td>
-            <a class="btn btn-success" href="update/{{$order->id}}">Verifikasi</a>
+            <a class="btn btn-success" href="">Verifikasi</a>
             </td>
         </tr>
     @endforeach

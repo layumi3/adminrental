@@ -76,8 +76,7 @@
 
     <!--         <a class="btn btn-success" href='{{route('update', '25')}}'>Lunas</a>
             </td> -->
-            <a class="btn btn-success" href="update/{{$order->id}}">Lunas
-            </a>
+            <a class="btn btn-success" href="<a class="btn btn-success" href="{{ route('pesanan',$order->id) }}">Lunas</a>
             </td>
         </tr>
     @endforeach
