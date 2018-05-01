@@ -24,9 +24,9 @@ class ProductController extends Controller
      */
     public function index()
     {
-    	$products = Product::all();
-        // echo "$contacts";
-        // return view('layouts\user.index',compact('contacts',$contacts));
+        $params = array('status'=>'1');
+        
+        $products = Product::where($params)->get();
         
         return view('layouts\product',compact('products'));
     }

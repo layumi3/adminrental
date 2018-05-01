@@ -31,3 +31,5 @@ $this->get('perental', 'MemberController@index')->name('perental');
 $this->get('feedback', 'FeedbackController@index')->name('feedback');
 $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('pesanan', 'OrderController@index')->name('pesanan');
+$this->get('konfirmasi_pay', 'OrderController@konfirmasi_pay')->name('konfirmasi_pay');
+Route::post('update/{id}', 'OrderController@update')->name('update');
