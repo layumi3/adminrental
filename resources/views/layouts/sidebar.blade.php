@@ -15,9 +15,9 @@
             </span>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i> Perental</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i> Agen</a></li>
-            <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i>Blok Member</a></li>
+            <li><a href="{{ route('perental') }}"><i class="fa fa-user"></i>Penyewa</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i>Pemilik</a></li>
+            <li><a href="../../index2.html"><i class="fa fa-lock "></i>Blok Member</a></li>
           </ul>
         </li>
        <li class="treeview">

@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Product;
 
-class ProductController extends Controller
+class OrderController extends Controller
 {
     /**
      * Create a new controller instance.
@@ -24,13 +24,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $params = array('status'=>'1');
-        
-    	$products = Product::where($params)->get();
+    	$orders = Orders::all();
         // echo "$contacts";
         // return view('layouts\user.index',compact('contacts',$contacts));
         
-        return view('layouts\product',compact('products'));
+        return view('layouts\order',compact('orders'));
     }
 }
-
