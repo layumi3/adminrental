@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Contact;
+use App\User;
 
 class MemberController extends Controller
 {
@@ -25,7 +25,7 @@ class MemberController extends Controller
     public function index()
     {
     	// $contacts = Contact::all();
-        $contacts = Contact::latest()->paginate(2);
+        $contacts = User::latest()->paginate(15);
         return view('layouts.user',compact('contacts'))
             ->with('i', (request()->input('page', 1) - 1) * 5);
     }
@@ -51,7 +51,7 @@ class MemberController extends Controller
             'website' => 'required',
             'email' => 'required',
         ]);
-        Contact::create($request->all());
+        User::create($request->all());
         return redirect()->route('perental.index')
                         ->with('success','Member created successfully');
     }
@@ -63,7 +63,7 @@ class MemberController extends Controller
      */
     public function show(Request $request, $id=null)
     {
-        $contact = Contact::find($id);
+        $contact = User::find($id);
         return view('perental.show',compact('contact'));
             }
     /**
@@ -76,6 +76,14 @@ class MemberController extends Controller
     {
         return view('perental.edit',compact('contacts'));
     }
+    
+    public function blok(Request $request, $id=null)
+    {
+            $contact = User::where('id', $id)
+            ->update(['blocked' => 1]);
+            return redirect()->route('perental');
+        
+     }
     /**
      * Update the specified resource in storage.
      *

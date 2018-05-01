@@ -13,8 +13,10 @@
     <thead>
         <tr>
             <th>ID</th>
+            <th>Nama</th>
             <th>Email</th>
-            <th>Website</th>
+            <th>Phone</th>
+            <th>Whatapps</th>
             <th>Aksi</th>
         </tr>
     </thead>
@@ -25,20 +27,25 @@
             {{ $contact->id }}
             </td>
             <td>
-            {{ $contact->email }}
+            {{ $contact->name }}
             </td>
             <td>
-            {{ $contact->website }}
+            {{ $contact->email }}
+            </td>
+           <td>
+            {{ $contact->phone }}
+            </td>
+            <td>
+            {{ $contact->whatapps }}
             </td>
             <td>
             <a class="btn btn-info" href="{{ route('perental.show',$contact->id) }}">Show</a>
-            <a class="btn btn-primary" href="{{ route('perental.edit',$contact->id) }}">Edit</a>
-           <!-- <a class="btn btn-info" href="#">Show</a>
-            <a class="btn btn-primary" href="#">Edit</a>
-            <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                Delete
-            </button> -->
-
+                <?php if ($contact->blocked==null){?>
+                <a class="btn btn-warning" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
+                
+                <?php }else{?>
+                <button class="btn .btn-sm btn-warning" disabled>Blocked</button> 
+                <?php }?>
             </td>
         </tr>
     @endforeach

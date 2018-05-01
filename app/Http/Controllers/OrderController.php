@@ -35,4 +35,16 @@ class OrderController extends Controller
             return redirect()->route('pesanan');
         
      }
+    
+    public function edit(Request $request,Order $orders)
+    {
+        request()->validate([
+            'hourly_price' => 'required',
+        ]);
+        $orders->update($request->all());
+        return redirect()->route('pesanan')
+                        ->with('success','Member updated successfully');
+    }
+
+    
 }

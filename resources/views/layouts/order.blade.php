@@ -24,6 +24,7 @@
             <th>Jenis Pengiriman</th>
             <th>Total Harga</th>
             <th>Validate</th>
+            <th>Aksi</th>
         </tr>
     </thead>
     <tbody>
@@ -53,17 +54,23 @@
             {{ $order->delivery_type }}
             </td>
             <td>
-            {{ $order->total_price }}
+            {{ $order->total_price}}
+            <?php
+                
+            ?>
             </td>
             <td>
                 <?php if ($order->status==1){?>
                 <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
                 
                 <?php }else if($order->status==2){?>
-                <button class="btn btn-warning" disabled>Click Me!</button>
+                <button class="btn btn-warning" disabled>On Trip</button>
                 <?php }else{?>
                 <a href="" class="btn-success">&nbsp;Success&nbsp;</a> 
                 <?php }?>
+            </td>
+            <td>
+                <a class="btn btn-info" href="{{ route('pesanan.edit',$order->id) }}">Edit</a>
             </td>
         </tr>
     @endforeach

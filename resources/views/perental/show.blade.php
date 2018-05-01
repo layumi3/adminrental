@@ -20,7 +20,7 @@
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
                 <strong>Name:</strong>
-                 {{ $contact->website }}
+                 {{ $contact->name }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
@@ -29,6 +29,30 @@
                  {{ $contact->email }}
             </div>
         </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Tanggal Lahir:</strong>
+                 {{ $contact->birth_date }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>No Telp:</strong>
+                 {{ $contact->phone }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>No WA:</strong>
+                 {{ $contact->whatapps }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Akun Instagram:</strong>
+                 {{ $contact->instagram }}
+            </div>
+        </div
     </div>
 </div>
 </div>
