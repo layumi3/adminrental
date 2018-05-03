@@ -37,7 +37,7 @@ class MemberController extends Controller
      */
     public function create()
     {
-        return view('perental.create');
+        return view('member.create');
     }
 /**
      * Store a newly created resource in storage.
@@ -52,7 +52,7 @@ class MemberController extends Controller
             'email' => 'required',
         ]);
         User::create($request->all());
-        return redirect()->route('perental.index')
+        return redirect()->route('member.index')
                         ->with('success','Member created successfully');
     }
     /**
@@ -64,7 +64,7 @@ class MemberController extends Controller
     public function show(Request $request, $id=null)
     {
         $contact = User::find($id);
-        return view('perental.show',compact('contact'));
+        return view('member.show',compact('contact'));
             }
     /**
      * Show the form for editing the specified resource.
@@ -74,14 +74,14 @@ class MemberController extends Controller
      */
     public function edit(Contact $contacts)
     {
-        return view('perental.edit',compact('contacts'));
+        return view('member.edit',compact('contacts'));
     }
     
     public function blok(Request $request, $id=null)
     {
             $contact = User::where('id', $id)
             ->update(['blocked' => 1]);
-            return redirect()->route('perental');
+            return redirect()->route('member');
         
      }
     
@@ -89,7 +89,7 @@ class MemberController extends Controller
     {
             $contact = User::where('id', $id)
             ->update(['blocked' => 0]);
-            return redirect()->route('perental');
+            return redirect()->route('member');
         
      }
     /**

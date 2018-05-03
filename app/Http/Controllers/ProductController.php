@@ -29,5 +29,28 @@ class ProductController extends Controller
         // return view('layouts\user.index',compact('contacts',$contacts));
         
         return view('layouts\product',compact('products'));
+
+        $params = array('status'=>'1');
+      //  $params2 = array('category'=>'Motor');
+        
+        $products = Product::where($params)->get();
+        
+        return view('layouts\product',compact('products'));
+    }
+
+    public function car()
+    {
+        $products = Product::all();
+        // echo "$contacts";
+        // return view('layouts\user.index',compact('contacts',$contacts));
+        
+        return view('layouts\product',compact('products'));
+
+        $params = array('status'=>'1');
+        $params2 = array('category'=>'Mobil');
+        
+        $products = Product::where($params)->get();
+        
+        return view('layouts\product',compact('products'));
     }
 }

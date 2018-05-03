@@ -5,7 +5,7 @@
 @section('content')
     <section class="content">
             <div class="card-header">
-              <h3 class="card-title">Data Table With Full Features</h3>
+              <h3 class="card-title">Data Member</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -39,7 +39,7 @@
             {{ $contact->whatapps }}
             </td>
             <td>
-            <a class="btn btn-info" href="{{ route('perental.show',$contact->id) }}">Show</a>
+            <a class="btn btn-info" href="{{ route('member.show',$contact->id) }}">Show</a>
                 <?php if ($contact->blocked==null){?>
                 <a class="btn btn-danger" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
                 

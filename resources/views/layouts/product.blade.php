@@ -8,7 +8,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Table With Full Features</h3>
+              <h3 class="card-title">Data Kendaraan</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -17,11 +17,13 @@
         <tr>
             <th>ID</th>
             <th>Pemilik ID</th>
-            <th>Brand</th>
-            <th>Tahun</th>
             <th>Type</th>
+            <th>Brand</th>
+            <th>Kategori</th>
+            <th>Tahun</th>
             <th>Plat</th>
             <th>Harga Perjam</th>
+            <th>Action</th>
 
             <!-- jadi yang ditampilka kondisi active = 1 
                 kalo yang kondisinya active=0 nanti munculin di tempat lain untuk di validasi
@@ -38,19 +40,25 @@
             {{ $product->user_id }}
             </td>
             <td>
-            {{ $product->brand }}
-            </td>            
+            {{ $product->type }}
+            </td>       
             <td>
-            {{ $product->year }}
+            {{ $product->brand }}
             </td>
             <td>
-            {{ $product->type }}
+            {{ $product->category }}
+            </td>                 
+            <td>
+            {{ $product->year }}
             </td>
             <td>
             {{ $product->plat }}
             </td>
             <td>
             {{ $product->hourly_price }}
+            </td>
+            <td>
+                <a class="btn btn-info" href="">Update</a> 
             </td>
         </tr>
     @endforeach
