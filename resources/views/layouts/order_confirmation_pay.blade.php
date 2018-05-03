@@ -23,7 +23,7 @@
             <th>Durasi Sewa</th>
             <th>Jenis Pengiriman</th>
             <th>Total Harga</th>
-            <th>Validate</th>
+            <th>Pembayaran</th>
         </tr>
     </thead>
     <tbody>
@@ -58,17 +58,15 @@
                 
             ?>
             </td>
-<!--             <td>
-                <?php if ($order->status==3){?>
+            <td>
+                <?php if ($order->pay==0){?>
                 <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
                 
-                <?php }else if($order->status==2){?>
-                <button class="btn btn-warning" disabled>On Trip</button>
                 <?php }else{?>
                 <a href="" class="btn-success">&nbsp;Success&nbsp;</a> 
                 <?php }?>
             </td>
-            <td>
+<!--             <td>
                 <a class="btn btn-info" href="{{ route('pesanan.edit',$order->id) }}">Edit</a>
             </td> -->
         </tr>

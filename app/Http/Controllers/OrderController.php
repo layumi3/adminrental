@@ -28,10 +28,18 @@ class OrderController extends Controller
         return view('layouts\order',compact('orders'));
     }
 
-    public function show(Request $request, $id=null)
+    public function index_pay()
+    {
+        $params = array('status'=>'3');
+
+        $orders = Order::where($params)->get();  
+        return view('layouts\order_confirmation_pay',compact('orders'));
+    }
+
+    public function validasi(Request $request, $id=null)
     {
             $contact = Order::where('id', $id)
-            ->update(['status' => 2]);
+            ->update(['pay' => 1]);
             return redirect()->route('pesanan');
         
      }

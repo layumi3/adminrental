@@ -34,6 +34,7 @@ $this->get('feedback', 'FeedbackController@index')->name('feedback');
 $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('produkcar', 'ProductController@car')->name('produkcar');
 $this->get('pesanan', 'OrderController@index')->name('pesanan');
+$this->get('pesanan_pay', 'OrderController@index_pay')->name('pesanan_pay');
 $this->get('pesanan/{id}', 'OrderController@validasi')->name('pesanan.validasi');
 $this->post('edit/{id}', 'OrderController@edit')->name('pesanan.edit');
 $this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');

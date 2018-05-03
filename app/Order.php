@@ -15,7 +15,7 @@ class Order extends Model
      */
     protected $table = 'orders';
     protected $fillable = [
-        'product_id','agent_id','user_id','status', 'order_time','order_created', 'rent_duration', 'delivery_type', 'total_price'
+        'product_id','agent_id','user_id','status', 'order_time','order_created', 'rent_duration', 'delivery_type', 'total_price', 'pay'
     ];
 
     protected $hidden = [
