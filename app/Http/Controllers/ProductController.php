@@ -34,9 +34,19 @@ class ProductController extends Controller
         $products = Product::where('category',"Mobil")->where('status','=',1)->get();
         return view('layouts\product',compact('products'));
     }
-    public function validasi()
+
+    public function invalidasi()
     {
         $products = Product::where('status','=',0)->get();
-        return view('layouts\product',compact('products'));
+        return view('layouts\product_validasi',compact('products'));
     }
+
+
+    public function validasi(Request $request, $id=null)
+    {
+        $products = Product::where('id',$id)
+        ->update(['status' => 1]);
+        return redirect()->route('produkvalidasi');
+    }
+
 }

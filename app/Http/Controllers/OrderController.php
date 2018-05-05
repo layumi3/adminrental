@@ -28,19 +28,18 @@ class OrderController extends Controller
         return view('layouts\order',compact('orders'));
     }
 
-    public function index_pay()
+    public function invalidasi()
     {
-        $params = array('status'=>'3');
-
-        $orders = Order::where($params)->get();  
+        $orders = Order::where('status','=',3)->get();
         return view('layouts\order_confirmation_pay',compact('orders'));
     }
 
     public function validasi(Request $request, $id=null)
     {
-            $contact = Order::where('id', $id)
-            ->update(['pay' => 1]);
-            return redirect()->route('pesanan');
+            $orders = Order::where('id', $id)
+            ->update(['status' => 2,
+                    'pay' => 1]);
+            return redirect()->route('order.invalidasi');
         
      }
     
@@ -50,7 +49,7 @@ class OrderController extends Controller
             'hourly_price' => 'required',
         ]);
         $orders->update($request->all());
-        return redirect()->route('pesanan')
+        return redirect()->route('order')
                         ->with('success','Member updated successfully');
     }
 

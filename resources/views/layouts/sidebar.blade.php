@@ -25,8 +25,8 @@
             <li><a href="{{ route('produkvalidasi') }}"><i class="fa fa-car"></i>Validasi Kendaraan</a></li>
           </ul>
         </li>
-       <li><a href="{{ route('pesanan') }}"><i class="fa fa-cart-plus"></i> Pesanan</a></li>
-       <li><a href="{{ route('pesanan_pay') }}"><i class="fa fa-money"></i>Konfirmasi Pembayaran</a></li>
+       <li><a href="{{ route('order') }}"><i class="fa fa-cart-plus"></i> Pesanan</a></li>
+       <li><a href="{{ route('order.invalidasi') }}"><i class="fa fa-money"></i>Konfirmasi Pembayaran</a></li>
        <li><a href="{{ route('feedback') }}"><i class="fa fa-comment"></i> Feedback Member</a></li>
        
       </ul>

@@ -8,7 +8,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Validasi Pesanan</h3>
+              <h3 class="card-title">Validasi Kendaraan</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -17,53 +17,49 @@
         <tr>
             <th>ID</th>
             <th>Pemilik ID</th>
-            <th>Penyewa ID</th>
-            <th>Status</th>
-            <th>Waktu Sewa</th>
-            <th>Durasi Sewa</th>
-            <th>Jenis Pengiriman</th>
-            <th>Total Harga</th>
-            <th>Pembayaran</th>
+            <th>Type</th>
+            <th>Brand</th>
+            <th>Kategori</th>
+            <th>Tahun</th>
+            <th>Plat</th>
+            <th>Harga Perjam</th>
+            <th>Action</th>
+
+            <!-- jadi yang ditampilka kondisi active = 1 
+                kalo yang kondisinya active=0 nanti munculin di tempat lain untuk di validasi
+                {blum di validasi}-->
         </tr>
     </thead>
     <tbody>
-    @foreach ($orders as $order)
+    @foreach ($products as $product)
         <tr>
             <td>
-            {{ $order->id }}
+            {{ $product->id }}
             </td>
             <td>
-            {{ $order->agent_id }}
+            {{ $product->user_id }}
             </td>
             <td>
-            {{ $order->user_id }}
+            {{ $product->type }}
+            </td>       
+            <td>
+            {{ $product->brand }}
             </td>
             <td>
-            {{ $order->status }}
-
-            <!-- sama halnya dengan product status = 3 admin validasi pembayaran  -->
+            {{ $product->category }}
+            </td>                 
+            <td>
+            {{ $product->year }}
             </td>
             <td>
-            {{ $order->order_time }}
+            {{ $product->plat }}
             </td>
             <td>
-            {{ $order->rent_duration }}
+            {{ $product->hourly_price }}
             </td>
             <td>
-            {{ $order->delivery_type }}
+                <a class="btn btn-success" href="{{ route('validasi.product',$product->id) }}">Validasi</a> 
             </td>
-            <td>
-            {{ $order->total_price}}
-            <?php
-                
-            ?>
-            </td>
-            <td>
-                <a class="btn btn-success" href="{{ route('order.validasi',$order->id) }}">Validasi</a> 
-            </td>
-<!--             <td>
-                <a class="btn btn-info" href="{{ route('order.edit',$order->id) }}">Edit</a>
-            </td> -->
         </tr>
     @endforeach
     </tbody>

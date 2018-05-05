@@ -8,7 +8,7 @@
 
           <div class="card">
             <div class="card-header">
-              <h3 class="card-title">Data Table With Full Features</h3>
+              <h3 class="card-title">Data Pesanan</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
@@ -23,7 +23,6 @@
             <th>Durasi Sewa</th>
             <th>Jenis Pengiriman</th>
             <th>Total Harga</th>
-            <th>Validate</th>
         </tr>
     </thead>
     <tbody>
@@ -60,7 +59,7 @@
             </td>
 <!--             <td>
                 <?php if ($order->status==3){?>
-                <a class="btn btn-info" href="{{ route('pesanan.validasi',$order->id) }}">Validate</a> 
+                <a class="btn btn-info" href="{{ route('order.validasi',$order->id) }}">Validate</a> 
                 
                 <?php }else if($order->status==2){?>
                 <button class="btn btn-warning" disabled>On Trip</button>
@@ -69,7 +68,7 @@
                 <?php }?>
             </td>
             <td>
-                <a class="btn btn-info" href="{{ route('pesanan.edit',$order->id) }}">Edit</a>
+                <a class="btn btn-info" href="{{ route('order.edit',$order->id) }}">Edit</a>
             </td> -->
         </tr>
     @endforeach
