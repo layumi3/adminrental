@@ -28,8 +28,10 @@ Route::resource('member','MemberController');
 Route::resource('product','ProductController');
 Route::resource('feedback','FeedbackController');
 Route::resource('pesanan','OrderController');
+// Route::resource('perental','MemberController');
+
 $this->get('member', 'MemberController@index')->name('member');
-$this->put('member/{id}', 'MemberController@show')->name('show');
+$this->get('showuser/{id}', 'MemberController@show')->name('showuser');
 $this->get('feedback', 'FeedbackController@index')->name('feedback');
 $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('produkcar', 'ProductController@car')->name('produkcar');
@@ -39,4 +41,4 @@ $this->get('pesanan_pay', 'OrderController@index_pay')->name('pesanan_pay');
 $this->get('pesanan/{id}', 'OrderController@validasi')->name('pesanan.validasi');
 $this->post('edit/{id}', 'OrderController@edit')->name('pesanan.edit');
 $this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');
-$this->get('unblok/{xd}', 'MemberController@blok')->name('unblok');
+$this->get('unblok/{xd}', 'MemberController@unblok')->name('unblok');

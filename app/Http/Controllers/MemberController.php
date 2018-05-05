@@ -64,7 +64,7 @@ class MemberController extends Controller
     public function show(Request $request, $id=null)
     {
         $contact = User::find($id);
-        return view('member.show',compact('contact'));
+        return view('perental\show',compact('contact'));
             }
     /**
      * Show the form for editing the specified resource.
@@ -85,12 +85,11 @@ class MemberController extends Controller
         
      }
     
-    private function unblok($xd=null)
+    public function unblok($xd=null)
     {
-            $contact = User::where('id', $xd);
-            echo "$contact";
-            // ->update(['blocked' => 0]);
-            // return redirect()->route('member');
+            $contact = User::where('id', $xd)
+            ->update(['blocked' => 0]);
+            return redirect()->route('member');
         
      }
     /**

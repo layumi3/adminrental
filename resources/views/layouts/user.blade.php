@@ -39,7 +39,7 @@
             {{ $contact->whatapps }}
             </td>
             <td>
-            <a class="btn btn-info" href="{{ route('member.show',$contact->id) }}">Show</a>
+            <a class="btn btn-info" href="{{ route('showuser',$contact->id) }}">Show</a>
                 <?php if ($contact->blocked==null){?>
                 <a class="btn btn-danger" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
                 

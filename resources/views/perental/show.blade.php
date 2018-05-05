@@ -12,7 +12,7 @@
                 <h2> Show Member</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('perental') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('member') }}"> Back</a>
             </div>
         </div>
     </div>
