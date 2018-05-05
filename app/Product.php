@@ -31,6 +31,13 @@ class Product extends Model
 
     public $timestamps = false;
 
+    public function updateProduct($data)
+    {
+            $product = $this->find($data['id']);
+            $product->hourly_price = $data['hourly_price'];
+            $product->save();
+            return 1;
+    }
 
     // additional functions
     // ==========================================================================================

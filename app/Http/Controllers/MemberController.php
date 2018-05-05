@@ -65,50 +65,36 @@ class MemberController extends Controller
     {
         $contact = User::find($id);
         return view('perental\show',compact('contact'));
-            }
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(Contact $contacts)
-    {
-        return view('member.edit',compact('contacts'));
     }
-    
+
     public function blok(Request $request, $id=null)
     {
-            $contact = User::where('id', $id)
-            ->update(['blocked' => 1]);
-            return redirect()->route('member');
+        $contact = User::where('id', $id)
+        ->update(['blocked' => 1]);
+        return redirect()->route('member');
         
      }
     
     public function unblok($xd=null)
     {
-            $contact = User::where('id', $xd)
-            ->update(['blocked' => 0]);
-            return redirect()->route('member');
-        
-     }
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request,Member $member)
-    {
-        request()->validate([
-            'name' => 'required',
-            'email' => 'required',
-        ]);
-        $member->update($request->all());
-        return redirect()->route('members.index')
-                        ->with('success','Member updated successfully');
+        $contact = User::where('id', $xd)
+        ->update(['blocked' => 0]);
+        return redirect()->route('member');
     }
+
+    public function update(Request $request, $id)
+    {
+        $contact = new User();
+        $data = $this->validate($request, [
+            'name'=>'required',
+            'email'=> 'required'
+        ]);
+        $data['id'] = $id;
+        $contact->updateData($data);
+
+        return redirect('/member')->with('success', 'New support ticket has been updated!!');
+    }
+
     /**
      * Remove the specified resource from storage.
      *
@@ -120,5 +106,18 @@ class MemberController extends Controller
         Member::destroy($id);
         return redirect()->route('members.index')
                         ->with('success','Member deleted successfully');
+    }
+
+
+
+    public function paginate(\Illuminate\Http\Request $request)
+    {
+        $users = User::when($request->keyword, function ($query) use ($request) {
+            $query->where('email', 'like', "%{$request->keyword}%")
+                ->orWhere('name', 'like', "%{$request->keyword}%");
+        })->paginate();
+        $users->appends($request->only('keyword'));
+        echo "$users";
+        // return view('layouts.user', compact('users'));
     }
 }

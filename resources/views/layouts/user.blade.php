@@ -3,6 +3,16 @@
 @extends('layouts.sidebar')
 
 @section('content')
+<form action="{{ url()->current() }}">
+    <div class="col-md-5">
+        <input type="text" name="keyword" class="form-control" placeholder="Search users...">
+    </div>
+    <div class="col-md-1">
+        <button type="submit" class="btn btn-primary">
+            Search
+        </button>
+    </div>
+</form>
     <section class="content">
             <div class="card-header">
               <h3 class="card-title">Data Member</h3>

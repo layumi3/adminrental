@@ -24,10 +24,6 @@
             <th>Plat</th>
             <th>Harga Perjam</th>
             <th>Action</th>
-
-            <!-- jadi yang ditampilka kondisi active = 1 
-                kalo yang kondisinya active=0 nanti munculin di tempat lain untuk di validasi
-                {blum di validasi}-->
         </tr>
     </thead>
     <tbody>
@@ -58,7 +54,7 @@
             {{ $product->hourly_price }}
             </td>
             <td>
-                <a class="btn btn-info" href="">Update</a> 
+                <a class="btn btn-info" href="{{ route('showproduct',$product->id) }}">Detail</a>
             </td>
         </tr>
     @endforeach

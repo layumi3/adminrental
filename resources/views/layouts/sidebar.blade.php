@@ -2,11 +2,11 @@
     <section class="sidebar">    
         <ul class="sidebar-menu" data-widget="tree">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="treeview">
+<!--         <li class="treeview">
           <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
-        </li>
+        </li> -->
         <li><a href="{{ route('member') }}">
         <i class="fa fa-address-card-o" ></i> <span> Member </span></a>
       </li>

@@ -29,6 +29,24 @@ class ProductController extends Controller
         return view('layouts\product',compact('products'));
     }
 
+    public function show(Request $request, $id=null)
+    {
+        $product = Product::find($id);
+        return view('perental\showproduct',compact('product'));
+    }
+
+    public function update(Request $request, $xd)
+    {
+        $product = new Product();
+        $data = $this->validate($request, [
+            'hourly_price'=>'required'
+        ]);
+        $data['id'] = $xd;
+        $product->updateProduct($data);
+
+        return redirect('/produk')->with('success', 'New support ticket has been updated!!');
+    }
+
     public function car()
     {
         $products = Product::where('category',"Mobil")->where('status','=',1)->get();
