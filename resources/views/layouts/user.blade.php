@@ -44,8 +44,8 @@
                 <a class="btn btn-danger" href="{{ route('blok.blok',$contact->id) }}" dissabled>Block</a>
                 
                 <?php }else{?>
-                 <a class="btn btn-success" href="{{ route('blok.unblok',$contact->id) }}">Unblock</a>
-               <!--  <button class="btn .btn-sm btn-success" href="{{ route('blok.unblok',$contact->id) }}">Unblock</button>  -->
+                 <a class="btn btn-success" href="{{ route('unblok',$contact->id) }}">Unblock</a>
+               
                 <?php }?>
             </td>
         </tr>

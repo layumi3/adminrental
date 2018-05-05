@@ -7,18 +7,9 @@
             <i class="fa fa-dashboard"></i> <span>Dashboard</span>
           </a>
         </li>
-        <li><a class="fa fa-address-card-o" href="{{ route('member') }}"></i> Member</a></li>
-      <!--  <li class="treeview">
-          <a href="#">
-            <i ></i> <span>Member</span>
-            <span class="pull-right-container">
-              <i class="fa fa-angle-left pull-right"></i>
-            </span>
-          </a>
-          <ul class="treeview-menu">
-            <li><a href="../../index2.html"><i class="fa fa-address-book-o"></i> Agen</a></li>
-          </ul> 
-        </li> -->
+        <li><a href="{{ route('member') }}">
+        <i class="fa fa-address-card-o" ></i> <span> Member </span></a>
+      </li>
        <li class="treeview">
           <a href="{{ route('produk') }}">
             <i class="fa fa-product-hunt"></i> <span>Produk</span>
@@ -31,7 +22,7 @@
             <li><a href="{{ route('produk') }}""><i class="fa fa-motorcycle"></i>Motor</a></li>
             <li><a href="{{ route('produkcar') }}"><i class="fa fa-car"></i>Mobil</a></li>
 <!--             <li><a href="../../index2.html"><i class="fa fa-bus"></i> Mini Bus</a></li> -->
-            <li><a href="{{ route('produkcar') }}"><i class="fa fa-car"></i>Validasi Kendaraan</a></li>
+            <li><a href="{{ route('produkvalidasi') }}"><i class="fa fa-car"></i>Validasi Kendaraan</a></li>
           </ul>
         </li>
        <li><a href="{{ route('pesanan') }}"><i class="fa fa-cart-plus"></i> Pesanan</a></li>

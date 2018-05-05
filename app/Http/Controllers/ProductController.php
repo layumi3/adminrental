@@ -24,33 +24,19 @@ class ProductController extends Controller
      */
     public function index()
     {
-    	$products = Product::all();
-        // echo "$contacts";
-        // return view('layouts\user.index',compact('contacts',$contacts));
-        
-        return view('layouts\product',compact('products'));
-
-        $params = array('status'=>'1');
-      //  $params2 = array('category'=>'Motor');
-        
-        $products = Product::where($params)->get();
+    	$products = Product::where('category',"Motor")->where('status','=',1)->get();
         
         return view('layouts\product',compact('products'));
     }
 
     public function car()
     {
-        $products = Product::all();
-        // echo "$contacts";
-        // return view('layouts\user.index',compact('contacts',$contacts));
-        
+        $products = Product::where('category',"Mobil")->where('status','=',1)->get();
         return view('layouts\product',compact('products'));
-
-        $params = array('status'=>'1');
-        $params2 = array('category'=>'Mobil');
-        
-        $products = Product::where($params)->get();
-        
+    }
+    public function validasi()
+    {
+        $products = Product::where('status','=',0)->get();
         return view('layouts\product',compact('products'));
     }
 }

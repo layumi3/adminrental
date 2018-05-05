@@ -85,11 +85,12 @@ class MemberController extends Controller
         
      }
     
-    public function unblok(Request $request, $id=null)
+    private function unblok($xd=null)
     {
-            $contact = User::where('id', $id)
-            ->update(['blocked' => 0]);
-            return redirect()->route('member');
+            $contact = User::where('id', $xd);
+            echo "$contact";
+            // ->update(['blocked' => 0]);
+            // return redirect()->route('member');
         
      }
     /**
