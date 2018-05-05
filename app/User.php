@@ -29,4 +29,14 @@ class User extends Authenticatable
     protected $hidden = [
         'password', 'remember_token',
     ];
+
+    public function updateData($data)
+    {
+            $contact = $this->find($data['id']);
+            $contact->name = $data['name'];
+            $contact->email = $data['email'];
+            $contact->save();
+            return 1;
+    }
+
 }

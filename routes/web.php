@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'MemberController@index')->name('home');
 $this->get('login', 'Auth\LoginController@showLoginForm')->name('login');
 $this->post('logout', 'Auth\LoginController@logout')->name('logout');
 /*
@@ -31,15 +31,22 @@ Route::resource('order','OrderController');
 // Route::resource('perental','MemberController');
 
 $this->get('member', 'MemberController@index')->name('member');
+$this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');
+$this->get('unblok/{xd}', 'MemberController@unblok')->name('unblok');
 $this->get('showuser/{id}', 'MemberController@show')->name('showuser');
+$this->post('showuser/update/{xd}', 'MemberController@update')->name('updateuser');
+
 $this->get('feedback', 'FeedbackController@index')->name('feedback');
+
+$this->get('showproduct/{id}', 'ProductController@show')->name('showproduct');
+$this->post('showproduct/update/{xd}', 'ProductController@update')->name('updateproduct');
 $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('produkcar', 'ProductController@car')->name('produkcar');
 $this->get('produkvalidasi', 'ProductController@invalidasi')->name('produkvalidasi');
 $this->get('validasi/{id}', 'ProductController@validasi')->name('validasi.product');
+
 $this->get('order', 'OrderController@index')->name('order');
 $this->get('order_invalidasi', 'OrderController@invalidasi')->name('order.invalidasi');
 $this->get('order_validasi/{id}', 'OrderController@validasi')->name('order.validasi');
 $this->post('edit/{id}', 'OrderController@edit')->name('order.edit');
-$this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');
-$this->get('unblok/{xd}', 'MemberController@unblok')->name('unblok');
+

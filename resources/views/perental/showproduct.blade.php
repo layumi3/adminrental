@@ -9,57 +9,63 @@
     <div class="row">
         <div class="col-lg-12 margin-tb">
             <div class="pull-left">
-                <h2> Show Member</h2>
+                <h2> Product Detail</h2>
             </div>
             <div class="pull-right">
-                <a class="btn btn-primary" href="{{ route('member') }}"> Back</a>
+                <a class="btn btn-primary" href="{{ route('produk') }}"> Back</a>
             </div>
         </div>
     </div>
 
-    <form action = "{{ route('updateuser',$contact->id) }}" method = "post">
+    <form action = "{{ route('updateproduct',$product->id) }}" method = "post">
          <input type = "hidden" name = "_token" value = "<?php echo csrf_token(); ?>">
     <div class="row">
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Name:</strong>
-                  <input type = 'text' name = 'name' 
-                     value = '{{ $contact->name }}'/>
-            </div>
-        </div>
-        <div class="col-xs-12 col-sm-12 col-md-12">
-            <div class="form-group">
-                <strong>Email:</strong>
-                <input type = 'text' name = 'email' 
-                     value = '{{ $contact->email }}'/>
+                <strong>User ID:</strong>
+                <input type = 'text' name = 'user_id' 
+                     value = '{{ $product->user_id }}'/>
                  
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Tanggal Lahir:</strong>
-                 {{ $contact->birth_date }}
+                <strong>Tipe:</strong>
+                 {{ $product->type }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>No Telp:</strong>
-                 {{ $contact->phone }}
+                <strong>Brand Merk :</strong>
+                 {{ $product->brand }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>No WA:</strong>
-                 {{ $contact->whatapps }}
+                <strong>Kategori :</strong>
+                 {{ $product->category }}
             </div>
         </div>
         <div class="col-xs-12 col-sm-12 col-md-12">
             <div class="form-group">
-                <strong>Akun Instagram:</strong>
-                 {{ $contact->instagram }}
+                <strong>Tahun Kendaraan:</strong>
+                 {{ $product->year }}
             </div>
         </div>
-    <input type = 'submit' value = "Update student" />
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Plat Nomor:</strong>
+                 {{ $product->plat }}
+            </div>
+        </div>
+        <div class="col-xs-12 col-sm-12 col-md-12">
+            <div class="form-group">
+                <strong>Harga Per Jam:</strong>
+                  <input type = 'text' name = 'hourly_price' 
+                     value = '{{ $product->hourly_price }}'/>
+            </div>
+        </div>
+    <input type = 'submit' value = "Update Product" />
     </div>
 </form>
 </div>
