@@ -53,5 +53,18 @@ class OrderController extends Controller
                         ->with('success','Member updated successfully');
     }
 
+    public function search(Request $request){
+        $cari = $request->get('search');
+        $orders = Order::where('id','LIKE','%'.$cari.'%')->paginate(10);
+        return view('layouts\order',compact('orders'));
+    }
+
+    public function search_valid(Request $request){
+        $cari = $request->get('search');
+        $orders = Order::where('id','LIKE','%'.$cari.'%')->paginate(10);
+        return view('layouts\order_confirmation_pay',compact('orders'));
+    }
+
+
     
 }

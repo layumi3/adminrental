@@ -35,6 +35,8 @@ $this->get('blok/{id}', 'MemberController@blok')->name('blok.blok');
 $this->get('unblok/{xd}', 'MemberController@unblok')->name('unblok');
 $this->get('showuser/{id}', 'MemberController@show')->name('showuser');
 $this->post('showuser/update/{xd}', 'MemberController@update')->name('updateuser');
+// $this->get('searchmember', 'MemberController@paginate')->name('searchmember');
+$this->get('searchmember', 'MemberController@search')->name('searchmember');
 
 $this->get('feedback', 'FeedbackController@index')->name('feedback');
 
@@ -44,9 +46,13 @@ $this->get('produk', 'ProductController@index')->name('produk');
 $this->get('produkcar', 'ProductController@car')->name('produkcar');
 $this->get('produkvalidasi', 'ProductController@invalidasi')->name('produkvalidasi');
 $this->get('validasi/{id}', 'ProductController@validasi')->name('validasi.product');
+$this->get('search', 'ProductController@search')->name('search');
+$this->get('searchinvalid', 'ProductController@search_invalidasi')->name('searchinvalid');
 
 $this->get('order', 'OrderController@index')->name('order');
 $this->get('order_invalidasi', 'OrderController@invalidasi')->name('order.invalidasi');
 $this->get('order_validasi/{id}', 'OrderController@validasi')->name('order.validasi');
 $this->post('edit/{id}', 'OrderController@edit')->name('order.edit');
+$this->get('search', 'OrderController@search')->name('search');
+$this->get('searchinvalid', 'OrderController@search_valid')->name('searchvalid');
 

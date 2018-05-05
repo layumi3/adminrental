@@ -110,14 +110,22 @@ class MemberController extends Controller
 
 
 
-    public function paginate(\Illuminate\Http\Request $request)
+    public function paginate(Request $request)
     {
-        $users = User::when($request->keyword, function ($query) use ($request) {
+        $contacts = User::when($request->keyword, function ($query) use ($request) {
             $query->where('email', 'like', "%{$request->keyword}%")
                 ->orWhere('name', 'like', "%{$request->keyword}%");
         })->paginate();
-        $users->appends($request->only('keyword'));
-        echo "$users";
-        // return view('layouts.user', compact('users'));
+        $contacts->appends($request->only('keyword'));
+
+        return view('layouts.user', compact('contacts'));
     }
+
+    public function search(Request $request){
+        $cari = $request->get('search');
+        $contacts = User::where('name','LIKE','%'.$cari.'%')->paginate(10);
+        return view('layouts.user', compact('contacts'));
+    }
+
+
 }

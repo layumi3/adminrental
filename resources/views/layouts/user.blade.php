@@ -3,22 +3,29 @@
 @extends('layouts.sidebar')
 
 @section('content')
-<form action="{{ url()->current() }}">
-    <div class="col-md-5">
-        <input type="text" name="keyword" class="form-control" placeholder="Search users...">
+
+    <div class="col-md-4 col-md-offset-4">
+        {!!Form::open(['method'=>'GET','url'=>'searchmember','role'=>'search'])  !!}
+        <div class="pull-right">  
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" name="search" placeholder="Search...">
+                <span class="input-group-btn">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i> Cari</button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        {!! Form::close() !!}
     </div>
-    <div class="col-md-1">
-        <button type="submit" class="btn btn-primary">
-            Search
-        </button>
-    </div>
-</form>
+
     <section class="content">
             <div class="card-header">
               <h3 class="card-title">Data Member</h3>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
+
 <table id="pageTable" class="table table-bordered table-hover">
     <thead>
         <tr>
@@ -27,7 +34,7 @@
             <th>Email</th>
             <th>Phone</th>
             <th>Whatapps</th>
-            <th>Aksi</th>
+            <th>Action</th>
         </tr>
     </thead>
     <tbody>
@@ -63,7 +70,10 @@
     </tbody>
 </table>
 </div>
+
 </section>
+{!! $contacts->links() !!}
+
 <script>
          jQuery(function($) {
         //initiate dataTables plugin

@@ -2,6 +2,22 @@
 @extends('layouts.sidebar')
 
 @section('content')
+
+    <div class="col-md-4 col-md-offset-4">
+        {!!Form::open(['method'=>'GET','url'=>'searchinvalid','role'=>'search'])  !!}
+        <div class="pull-right">  
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" name="search" placeholder="Search...">
+                <span class="input-group-btn">
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="submit"><i class="fa fa-search"></i> Cari</button>
+                    </span>
+                </span>
+            </div>
+        </div>
+        {!! Form::close() !!}
+    </div>
+   
 <section class="content">
       <div class="row">
         <div class="col-12">
@@ -24,10 +40,6 @@
             <th>Plat</th>
             <th>Harga Perjam</th>
             <th>Action</th>
-
-            <!-- jadi yang ditampilka kondisi active = 1 
-                kalo yang kondisinya active=0 nanti munculin di tempat lain untuk di validasi
-                {blum di validasi}-->
         </tr>
     </thead>
     <tbody>
@@ -70,6 +82,7 @@
 </div>
 </div>
 </section>
+
 <script>
          jQuery(function($) {
         //initiate dataTables plugin
